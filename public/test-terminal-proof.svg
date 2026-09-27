@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420">
+  <defs>
+    <style>
+      /* Base Animations */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(5px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .animate-line {
+        opacity: 0;
+        animation: fadeIn 0.4s ease-out forwards;
+      }
+      
+      .delay-1 { animation-delay: 0.2s; }
+      .delay-2 { animation-delay: 0.6s; }
+      .delay-3 { animation-delay: 1.0s; }
+      .delay-4 { animation-delay: 1.2s; }
+      .delay-5 { animation-delay: 1.4s; }
+      .delay-6 { animation-delay: 1.6s; }
+      .delay-7 { animation-delay: 1.8s; }
+      .delay-8 { animation-delay: 2.2s; }
+
+      /* Window Styling */
+      .window-bg { fill: #0f172a; fill-opacity: 0.85; }
+      .window-border { stroke: rgba(255, 255, 255, 0.15); stroke-width: 1; fill: none; }
+      .header-bg { fill: #1e293b; fill-opacity: 0.9; }
+      
+      /* Typography */
+      .font-mono { font-family: ui-monospace, SFMono-Regular, 'Fira Code', 'JetBrains Mono', Consolas, 'Liberation Mono', 'Courier New', monospace; }
+      
+      .text-title { font-size: 13px; fill: #94a3b8; font-weight: 500; }
+      .text-prompt { font-size: 15px; fill: #f472b6; font-weight: 700; }
+      .text-cmd { font-size: 15px; fill: #f8fafc; font-weight: 500; }
+      
+      .text-run { font-size: 14px; fill: #0ea5e9; font-weight: 700; }
+      .text-path { font-size: 14px; fill: #64748b; }
+      .text-file { font-size: 15px; fill: #22c55e; font-weight: 700; }
+      .text-file-dim { fill: #cbd5e1; font-weight: 500; }
+      
+      .text-case { font-size: 14px; fill: #cbd5e1; }
+      .text-case-dim { fill: #64748b; font-size: 12px; font-style: italic; }
+      .text-check { fill: #10b981; font-weight: 700; filter: drop-shadow(0 0 2px rgba(16, 185, 129, 0.8)); }
+      
+      .text-summary-key { font-size: 14px; fill: #94a3b8; font-weight: 500; }
+      .text-summary-val { font-size: 14px; fill: #22c55e; font-weight: 700; filter: drop-shadow(0 0 4px rgba(34, 197, 94, 0.4)); }
+      .text-summary-dim { fill: #64748b; font-weight: 400; }
+      .text-summary-white { fill: #f8fafc; font-weight: 700; }
+    </style>
+    
+    <!-- Ultra Premium Mesh Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312e81" />
+      <stop offset="40%" stop-color="#7c3aed" />
+      <stop offset="80%" stop-color="#db2777" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+
+    <!-- Deep Ambient Drop Shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="25" stdDeviation="25" flood-color="#000000" flood-opacity="0.6"/>
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- macOS Button Gradients -->
+    <radialGradient id="red-btn" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ff7f79" />
+      <stop offset="100%" stop-color="#ff5f56" />
+    </radialGradient>
+    <radialGradient id="yellow-btn" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffce54" />
+      <stop offset="100%" stop-color="#ffbd2e" />
+    </radialGradient>
+    <radialGradient id="green-btn" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#4ade80" />
+      <stop offset="100%" stop-color="#27c93f" />
+    </radialGradient>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="800" height="420" fill="url(#bg-grad)" />
+
+  <!-- Terminal Group (Centered and Scaled) -->
+  <g transform="translate(40, 30)" filter="url(#shadow)">
+    <!-- Window Frame -->
+    <rect x="0" y="0" width="720" height="360" rx="14" ry="14" class="window-bg" />
+    <rect x="0.5" y="0.5" width="719" height="359" rx="13.5" ry="13.5" class="window-border" />
+    
+    <!-- Header -->
+    <path d="M 0 14 Q 0 0 14 0 L 706 0 Q 720 0 720 14 L 720 42 L 0 42 Z" class="header-bg" />
+    <line x1="0" y1="42" x2="720" y2="42" class="window-border" />
+    
+    <!-- Window Controls (Hyper-realistic) -->
+    <circle cx="22" cy="21" r="6" fill="url(#red-btn)" stroke="#e0443e" stroke-width="0.5" />
+    <circle cx="42" cy="21" r="6" fill="url(#yellow-btn)" stroke="#dea123" stroke-width="0.5" />
+    <circle cx="62" cy="21" r="6" fill="url(#green-btn)" stroke="#1aab29" stroke-width="0.5" />
+    
+    <!-- Title -->
+    <text x="360" y="26" text-anchor="middle" class="text-title font-mono">tenderlens — vitest — 720x360</text>
+    
+    <!-- Terminal Content -->
+    <g transform="translate(30, 42)">
+      
+      <!-- Line 1: Command -->
+      <g class="animate-line delay-1">
+        <text x="0" y="30" class="font-mono"><tspan class="text-prompt">❯</tspan> <tspan class="text-cmd">npx vitest run</tspan></text>
+      </g>
+      
+      <!-- Line 2: RUN info -->
+      <g class="animate-line delay-2">
+        <rect x="0" y="50" width="45" height="22" rx="6" fill="#0ea5e9" fill-opacity="0.15" stroke="#0ea5e9" stroke-opacity="0.3" stroke-width="1" />
+        <text x="8" y="66" class="text-run font-mono">RUN</text>
+        <text x="58" y="66" class="text-path font-mono">v5.0.2 /Users/tenderlens</text>
+      </g>
+      
+      <!-- Line 3: File output -->
+      <g class="animate-line delay-3">
+        <text x="0" y="105" class="text-file font-mono">✓ <tspan class="text-file-dim">__tests__/readinessEngine.test.ts (4 tests)</tspan></text>
+      </g>
+      
+      <!-- Lines 4-7: Test Cases -->
+      <g class="animate-line delay-4">
+        <text x="24" y="135" class="text-case font-mono"><tspan class="text-check">✓</tspan> calculates proportional readiness score correctly <tspan class="text-case-dim">3ms</tspan></text>
+      </g>
+      <g class="animate-line delay-5">
+        <text x="24" y="160" class="text-case font-mono"><tspan class="text-check">✓</tspan> caps score at 49% on missing mandatory requirements <tspan class="text-case-dim">2ms</tspan></text>
+      </g>
+      <g class="animate-line delay-6">
+        <text x="24" y="185" class="text-case font-mono"><tspan class="text-check">✓</tspan> falls back gracefully on empty/malformed inputs <tspan class="text-case-dim">5ms</tspan></text>
+      </g>
+      <g class="animate-line delay-7">
+        <text x="24" y="210" class="text-case font-mono"><tspan class="text-check">✓</tspan> prevents zero-evidence verification (AI Guard) <tspan class="text-case-dim">1ms</tspan></text>
+      </g>
+      
+      <!-- Summary Block -->
+      <g class="animate-line delay-8">
+        <!-- Summary Divider -->
+        <line x1="0" y1="240" x2="660" y2="240" stroke="#334155" stroke-width="1" stroke-dasharray="2 4" />
+        
+        <text x="0" y="270" class="text-summary-key font-mono">Test Files  <tspan class="text-summary-val">1 passed</tspan> <tspan class="text-summary-dim">(1)</tspan></text>
+        <text x="0" y="295" class="text-summary-key font-mono">     Tests  <tspan class="text-summary-val">4 passed</tspan> <tspan class="text-summary-dim">(4)</tspan></text>
+        <text x="0" y="320" class="text-summary-key font-mono">  Duration  <tspan class="text-summary-white">142ms</tspan> <tspan class="text-summary-dim">(transform 66%, import 19%, tests 15%)</tspan></text>
+      </g>
+      
+    </g>
+  </g>
+</svg>
